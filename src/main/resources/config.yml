@@ -1,0 +1,36 @@
+# All speed is measured in BPS - blocks per second
+
+IPT: 20 # Number of physics processing iterations per tick. Not recommended to change
+
+GRAVITY: -0.05 # Gravity
+
+DEFAULT_BOUNCE_ENERGY_LOSS: 2 # Default energy loss on bounce. Energy / DEFAULT_BOUNCE_ENERGY_LOSS
+
+MAX_SPEED: 40 # Maximum ball speed
+MAX_ROT_SPEED: 100 # Maximum ball rotation speed
+ROT_BREAKING_SPEED: 1000 # Maximum rotation braking speed
+ROT_SPEED_PROPORTION: 1000 # Rotation acceleration proportion based on speed. Applied when the ball bounces
+
+THROW_CHECKING_SPEED: 0.06 # Throw power slider speed
+MAX_THROW_POWER: 19 # Maximum throw power (in BPS)
+MIN_THROW_POWER: 8 # Minimum throw power (in BPS)
+
+DESPAWN_TIME: 10000 # Time (in ticks) after which a stationary ball will despawn
+DEFAULT_SKULLSKIN: ball # Default ball skin
+
+# Block settings
+BLOCKS_ENERGY_LOSSES: # Custom energy losses for specific blocks
+  WATER: 5
+  SLIME_BLOCK: 1
+  MOSS_BLOCK: 3
+  HAY_BLOCK: 5
+  HONEY_BLOCK: 100
+  ICE: 1.2
+  PACKED_ICE: 1.1
+  BLUE_ICE: 0.9
+
+TRANSPARENT_BLOCKS: # Blocks that the ball can pass through
+  - AIR
+  - VOID_AIR
+  - CAVE_AIR
+  - GRASS

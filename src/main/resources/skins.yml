@@ -1,0 +1,15 @@
+# skin:
+#   name: <name>
+#   url: <Insert the ending of the link from the official Minecraft API for the head. You can use the site https://minecraft-heads.com/> example: http://textures.minecraft.net/texture/93c2f1c5d2c8f0e33730c14dca1c1d1e1abd8596b0839d6738d18f46432b6fa6 - insert only the hash at the end
+#   perm: <Permission for the ball>                                          *Optional
+#   lock_msg: <Message under the ball for those who don't have permission>   *Optional
+
+ball:
+  name: §fBall
+  url: 93c2f1c5d2c8f0e33730c14dca1c1d1e1abd8596b0839d6738d18f46432b6fa6
+
+premium_ball:
+  name: §dPremium Ball
+  url: a794284953646833c49db0bae137cc93a774cb6ec8c53d1bcef6cd124a5a71ca
+  perm: volleyball.premiumball
+  lock_msg: "§cYou can't use this ball!"
