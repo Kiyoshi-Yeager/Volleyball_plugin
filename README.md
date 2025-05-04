@@ -1,5 +1,5 @@
 # VolleyBall UPDATE
-Updating the "VolleyBall" plugin. This simple plugin is designed specifically for private servers. It allows you to create a ball and interact with it in the open world of minecraft.
+🥳 Updating the "VolleyBall" plugin. This simple plugin is designed specifically for private servers. It allows you to create a ball and interact with it in the open world of minecraft.
 
 ![VolleyBall gameplay](https://github.com/IEnumerablee/Volleyball/blob/master/volleyball.gif?raw=true)
 # Usage
@@ -79,7 +79,7 @@ premium_ball:
   lock_msg: "§cYou can't use this ball!"
 ```
 # Dependencies
-The plugin requires **Canvas** to function. Since Canvas is not included in a pre-compiled form, I have bundled it with this version of the plugin.
+They're gone! 🥳
 # Adding a New Ball Skin
 The plugin uses the official Minecraft API, so you need to use official Minecraft heads. For example, you can use a site like Minecraft-Heads. In the "url" field, you need to insert the set of characters at the end of the link. For example, for the link:
 http://textures.minecraft.net/texture/93c2f1c5d2c8f0e33730c14dca1c1d1e1abd8596b0839d6738d18f46432b6fa6,
