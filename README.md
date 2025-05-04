@@ -8,6 +8,7 @@
 - Throw the ball harder: Left-click (LMB) while running or jumping.
 - Throw power slider: Hold SHIFT.
 - Pick up the ball: Press SHIFT near the ball.
+
 commands:
 - /ballskin: Change the ball's skin.
 - /ballsreload: Reload the plugin. Requires the volleyball.reload permission.
