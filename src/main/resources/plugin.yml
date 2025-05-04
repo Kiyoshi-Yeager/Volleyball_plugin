@@ -1,8 +1,8 @@
-name: Volleyball
+name: VolleyballUPDATE
 version: '${project.version}'
 main: ru.ienumerable.volleyball.Volleyball
 api-version: '1.19'
-authors: [ IEnumerable ]
+authors: [ Pasha Void ]
 commands:
   ballskin:
     description: sets ball skin

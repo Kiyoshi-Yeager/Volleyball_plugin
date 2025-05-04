@@ -1,5 +1,7 @@
 # All speed is measured in BPS - blocks per second
 
+# Config VolleyBall Plugin Update
+
 IPT: 20 # Number of physics processing iterations per tick. Not recommended to change
 
 GRAVITY: -0.05 # Gravity
@@ -29,8 +31,10 @@ BLOCKS_ENERGY_LOSSES: # Custom energy losses for specific blocks
   PACKED_ICE: 1.1
   BLUE_ICE: 0.9
 
-TRANSPARENT_BLOCKS: # Blocks that the ball can pass through
-  - AIR
-  - VOID_AIR
-  - CAVE_AIR
-  - GRASS
+TRANSPARENT_BLOCKS: # Blocks that the ball can pass through && Most transparent blocks are automatically enabled
+  - PINK_PETALS
+
+TEXT:
+  SKIN_MENU_TITLE: ">> Skin Selection <<"
+  SKIN_ALREADY_SELECTED: "The skin has already been selected"
+  CLICK_TO_SELECT: "Click to select this skin"

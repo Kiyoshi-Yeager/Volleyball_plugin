@@ -38,6 +38,11 @@ public class Config {
 
     public static final Map<Material, Double> BOUNCE_ENERGY_LOSSES = new HashMap<>();
 
+    public static String SKIN_MENU_TITLE = ">> Skin Selection <<";
+    public static String SKIN_ALREADY_SELECTED = "The skin has already been selected";
+    public static String CLICK_TO_SELECT = "Click to select this skin";
+
+
 
     public static void init(){
 
@@ -63,6 +68,10 @@ public class Config {
         if(!Volleyball.getSkullsContainer().containsId(DEFAULT_SKULLSKIN)) throw new IllegalArgumentException("Default ball skin is not defined");
 
         DESPAWN_TIME = yamlConfiguration.getInt("DESPAWN_TIME");
+
+        SKIN_MENU_TITLE = yamlConfiguration.getString("TEXT.SKIN_MENU_TITLE");
+        SKIN_ALREADY_SELECTED = yamlConfiguration.getString("TEXT.SKIN_ALREADY_SELECTED");
+        CLICK_TO_SELECT = yamlConfiguration.getString("TEXT.CLICK_TO_SELECT");
 
 
         for(Object block : yamlConfiguration.getList("TRANSPARENT_BLOCKS")){

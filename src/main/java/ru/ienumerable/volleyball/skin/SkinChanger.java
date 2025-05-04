@@ -12,6 +12,7 @@ import org.ipvp.canvas.mask.Mask;
 import org.ipvp.canvas.paginate.PaginatedMenuBuilder;
 import org.ipvp.canvas.slot.SlotSettings;
 import org.ipvp.canvas.type.ChestMenu;
+import ru.ienumerable.volleyball.Config;
 import ru.ienumerable.volleyball.Volleyball;
 
 import java.util.ArrayList;
@@ -41,7 +42,7 @@ public class SkinChanger {
         ItemStack arrowBackward = getNamedItem(Material.ARROW, ChatColor.GOLD + "<<");
 
         Menu.Builder<ChestMenu.Builder> menuTemplate = ChestMenu.builder(3).
-                title(">> Выбор скина <<");
+                title(Config.SKIN_MENU_TITLE);
 
         Mask itemSlots = BinaryMask.builder(menuTemplate.getDimensions())
                 .pattern("111111111")
@@ -73,7 +74,7 @@ public class SkinChanger {
                 stripColors(item);
                 addPrefix(item, ChatColor.WHITE + "> ");
                 addSuffix(item, " <");
-                addDescription(item, ChatColor.GRAY + "Скин уже выбран");
+                addDescription(item, ChatColor.GRAY + Config.SKIN_ALREADY_SELECTED);
                 slotBuilder.item(item);
             }else if(!skin.hasPermission(player)){
                 stripColors(item);
@@ -81,7 +82,7 @@ public class SkinChanger {
                 addDescription(item, ChatColor.GRAY + skin.getBlockMsg());
                 slotBuilder.item(item);
             }else{
-                addDescription(item, ChatColor.GRAY + "Нажмите, чтобы выбрать этот скин");
+                addDescription(item, ChatColor.GRAY + Config.CLICK_TO_SELECT);
                 slotBuilder.clickHandler(SkinChanger::selectHandler);
                 slotBuilder.item(item);
             }

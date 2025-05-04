@@ -1,8 +1,13 @@
 # skin:
 #   name: <name>
 #   url: <Insert the ending of the link from the official Minecraft API for the head. You can use the site https://minecraft-heads.com/> example: http://textures.minecraft.net/texture/93c2f1c5d2c8f0e33730c14dca1c1d1e1abd8596b0839d6738d18f46432b6fa6 - insert only the hash at the end
-#   perm: <Permission for the ball>                                          *Optional
-#   lock_msg: <Message under the ball for those who don't have permission>   *Optional
+#   perm: <Permission for the ball>      You can create your own               *Optional
+#   lock_msg: <Message under the ball for those who don't have permission>     *Optional
+
+
+# Config VolleyBall Plugin Update
+
+# Use "§" for the default colors.
 
 ball:
   name: §fBall

