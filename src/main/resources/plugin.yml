@@ -11,3 +11,7 @@ commands:
     description: reload balls config
     usage: /ballsreload
     permission: volleyball.reload
+  ballsummon:
+    description: summon new ball
+    usage: /ballsummon <x> <y> <z> <world>
+    permission: volleyball.summon

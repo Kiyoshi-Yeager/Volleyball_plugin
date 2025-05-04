@@ -4,8 +4,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.ipvp.canvas.MenuFunctionListener;
-import ru.ienumerable.volleyball.ball.Ball;
 import ru.ienumerable.volleyball.ball.BallsContainer;
+import ru.ienumerable.volleyball.commands.BallSummonCMD;
+import ru.ienumerable.volleyball.commands.CommandsCMD;
 import ru.ienumerable.volleyball.skin.SkullsContainer;
 import ru.ienumerable.volleyball.tools.update.Updater;
 
@@ -41,8 +42,12 @@ public final class Volleyball extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new MenuFunctionListener(), this);
 
 
-        getCommand("ballskin").setExecutor(new CommandListener());
-        getCommand("ballsreload").setExecutor(new CommandListener());
+        CommandsCMD commandsCMD = new CommandsCMD();
+        getCommand("ballskin").setExecutor(commandsCMD);
+        getCommand("ballsreload").setExecutor(commandsCMD);
+
+        getCommand("ballsummon").setExecutor(new BallSummonCMD());
+        getCommand("ballsummon").setTabCompleter(new BallSummonCMD());
 
         updater.startScheduler();
 
@@ -59,8 +64,6 @@ public final class Volleyball extends JavaPlugin {
 
         skullsContainer.parseSkulls();
         Config.init();
-
-        Ball.con();
 
     }
 

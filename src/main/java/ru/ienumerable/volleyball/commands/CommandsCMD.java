@@ -1,4 +1,4 @@
-package ru.ienumerable.volleyball;
+package ru.ienumerable.volleyball.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -7,10 +7,11 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import ru.ienumerable.volleyball.Volleyball;
 import ru.ienumerable.volleyball.skin.SkinChanger;
 import ru.ienumerable.volleyball.skin.SkullSkin;
 
-public class CommandListener implements CommandExecutor {
+public class CommandsCMD implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
@@ -21,7 +22,7 @@ public class CommandListener implements CommandExecutor {
                     ItemStack item = player.getInventory().getItemInMainHand();
 
                     if (!item.hasItemMeta() || !SkullSkin.isContainSkin(item)) {
-                        player.sendMessage(ChatColor.RED + "Возьмите мяч в руки, чтобы сменить скин!");
+                        player.sendMessage(ChatColor.RED + "Pick up the ball to change the skin!");
                         return true;
                     }
 
@@ -32,7 +33,7 @@ public class CommandListener implements CommandExecutor {
             case "ballsreload" -> {
                 Volleyball.getBallsContainer().dropAllBalls();
                 Volleyball.loadConfig();
-                sendMsgToOps(ChatColor.GREEN + "Презагружено!");
+                sendMsgToOps(ChatColor.GREEN + "Reloaded!");
             }
         }
 
