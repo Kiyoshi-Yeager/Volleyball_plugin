@@ -245,7 +245,7 @@ public class Ball implements Updatable {
     }
 
     private void playSound(){
-        position.getWorld().playSound(position, Sound.BLOCK_BAMBOO_BREAK, 10, 1);
+        position.getWorld().playSound(position, Sound.valueOf(Config.SOUND_ID), Config.SOUND_VOLUME, Config.SOUND_PITCH);
     }
 
     private void chunkCheck(){

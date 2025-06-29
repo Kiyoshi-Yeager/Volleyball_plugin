@@ -12,6 +12,8 @@ import java.util.Map;
 
 public class Config {
 
+    public static boolean ENABLE_BALL_CRAFTING = true;
+
     public static String DEFAULT_SKULLSKIN = "ball";
 
     public static double RADIAN = 180 / Math.PI;
@@ -43,10 +45,18 @@ public class Config {
     public static String CLICK_TO_SELECT = "Click to select this skin";
 
 
+    public static String SOUND_ID = "BLOCK_BAMBOO_BREAK";
+    public static Integer SOUND_VOLUME = 6;
+    public static Integer SOUND_PITCH = 1;
+
+
 
     public static void init(){
 
         YamlConfiguration yamlConfiguration = YamlConfiguration.loadConfiguration(new File(Volleyball.getInstance().getDataFolder(), "config.yml"));
+
+        ENABLE_BALL_CRAFTING = yamlConfiguration.getBoolean("ENABLE_BALL_CRAFTING");
+
 
         IPT = yamlConfiguration.getInt("IPT");
 
@@ -72,6 +82,10 @@ public class Config {
         SKIN_MENU_TITLE = yamlConfiguration.getString("TEXT.SKIN_MENU_TITLE");
         SKIN_ALREADY_SELECTED = yamlConfiguration.getString("TEXT.SKIN_ALREADY_SELECTED");
         CLICK_TO_SELECT = yamlConfiguration.getString("TEXT.CLICK_TO_SELECT");
+
+        SOUND_ID = yamlConfiguration.getString("SOUND.SOUND_ID");
+        SOUND_VOLUME = yamlConfiguration.getInt("SOUND.SOUND_VOLUME");
+        SOUND_PITCH = yamlConfiguration.getInt("SOUND.SOUND_PITCH");
 
 
         for(Object block : yamlConfiguration.getList("TRANSPARENT_BLOCKS")){

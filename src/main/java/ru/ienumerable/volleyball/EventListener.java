@@ -66,6 +66,10 @@ public class EventListener implements Listener {
     @EventHandler
     public void craftBall(PlayerInteractEvent event){
 
+        if (!Config.ENABLE_BALL_CRAFTING) {
+            return;
+        }
+
         Player player = event.getPlayer();
 
         ItemStack item = player.getInventory().getItemInMainHand();
