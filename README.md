@@ -19,6 +19,8 @@ commands:
 
 # Config VolleyBall Plugin Update
 
+ENABLE_BALL_CRAFTING: true
+
 IPT: 20 # Number of physics processing iterations per tick. Not recommended to change
 
 GRAVITY: -0.05 # Gravity
@@ -55,6 +57,11 @@ TEXT:
   SKIN_MENU_TITLE: ">> Skin Selection <<"
   SKIN_ALREADY_SELECTED: "The skin has already been selected"
   CLICK_TO_SELECT: "Click to select this skin"
+
+SOUND:
+  SOUND_ID: "BLOCK_BAMBOO_BREAK"
+  VOLUME: 6.0
+  PITCH: 1.0
 ```
 ## skins.yml
 ```yaml
