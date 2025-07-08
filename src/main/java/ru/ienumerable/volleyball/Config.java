@@ -46,8 +46,8 @@ public class Config {
 
 
     public static String SOUND_ID = "BLOCK_BAMBOO_BREAK";
-    public static Integer SOUND_VOLUME = 6;
-    public static Integer SOUND_PITCH = 1;
+    public static float SOUND_VOLUME = 6.0F;
+    public static float SOUND_PITCH = 1.0F;
 
 
 
@@ -84,8 +84,8 @@ public class Config {
         CLICK_TO_SELECT = yamlConfiguration.getString("TEXT.CLICK_TO_SELECT");
 
         SOUND_ID = yamlConfiguration.getString("SOUND.SOUND_ID");
-        SOUND_VOLUME = yamlConfiguration.getInt("SOUND.SOUND_VOLUME");
-        SOUND_PITCH = yamlConfiguration.getInt("SOUND.SOUND_PITCH");
+        SOUND_VOLUME = (float) yamlConfiguration.getDouble("SOUND.VOLUME");
+        SOUND_PITCH = (float) yamlConfiguration.getDouble("SOUND.PITCH");
 
 
         for(Object block : yamlConfiguration.getList("TRANSPARENT_BLOCKS")){

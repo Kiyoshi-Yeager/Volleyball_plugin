@@ -43,5 +43,5 @@ TEXT:
 
 SOUND:
   SOUND_ID: "BLOCK_BAMBOO_BREAK"
-  volume: 6
-  pitch: 1
+  VOLUME: 6.0
+  PITCH: 1.0

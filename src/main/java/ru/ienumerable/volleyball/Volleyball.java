@@ -3,7 +3,7 @@ package ru.ienumerable.volleyball;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.ipvp.canvas.MenuFunctionListener;
+import ru.ienumerable.volleyball.canvas.MenuFunctionListener;
 import ru.ienumerable.volleyball.ball.BallsContainer;
 import ru.ienumerable.volleyball.commands.BallSummonCMD;
 import ru.ienumerable.volleyball.commands.CommandsCMD;
